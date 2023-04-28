@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="header">
+    <div class="header-logo" routerLink="/home">
+      <img src="../../../assets/logo1.png" />
+      <h1>კლინიკა</h1>
+    </div>
+    <div class="nav">
+      <div>ექიმები</div>
+      <div>კლინიკები</div>
+      <div>ანოტაციები</div>
+      <div>აქციები</div>
+      <div>სერვისები</div>
+      <div>მედიკამენტები</div>
+      <div>კონტაქტი</div>
+    </div>
+    <div class="header-button">
+      <button (click)="onButtonClick()">ავტორიზაცია</button>
+      /
+      <button routerLink="/register">რეგისტრაცია</button>
+    </div>
+    <div class="overlay" *ngIf="showForm" (click)="closeOverlay()" #overlay>
+      <app-login></app-login>
+    </div>
+
+    <div class="language">ENG</div>
+  </div>
+
+  <div class="search">
+    <div class="contact">
+      <div>
+        <div class="icon"><img src="../../../assets/callicon.png" /></div>
+
+        <span>032 2 100 100</span>
+      </div>
+      <div>
+        <div class="icon"><img src="../../../assets/locationicon.png" /></div>
+
+        <span>იაკობ ნიკოლაძე №10</span>
+      </div>
+    </div>
+    <div class="inputs">
+      <form>
+        <input
+          type="text
+        "
+          placeholder="მოძებნე ექიმი სახელით"
+        />
+        <input
+          type="text
+        "
+          placeholder="მოძებნე სპეციალობით"
+        />
+        <button>
+          <img src="../../../assets/searchicon.png" />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- <div class="photo-container">
+    <div class="photo"></div>
+    <div class="background-header">
+      <div class="header1">
+        <h1>აირჩიე კლინიკა რომელსაც შეგიძლია ენდო</h1>
+        <div class="location-container">
+          <img src="../../../assets/locationicon.png" />
+          იაკობ ნიკოლაძე №10
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

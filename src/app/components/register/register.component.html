@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="form-container">
+    <div class="register-header"><h1>რეგისტრაცია</h1></div>
+    <div class="form-container2">
+      <form [formGroup]="userRegistration" (ngSubmit)="onSubmit()">
+        <div class="input">
+          <label for="firstName">სახელი</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            formControlName="firstName"
+            required
+          />
+        </div>
+
+        <div class="input">
+          <label for="lastName">გვარი</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            formControlName="lastName"
+            required
+          />
+        </div>
+
+        <div class="input">
+          <label for="email">ელ-ფოსტა:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div class="input">
+          <label for="password">პაროლი</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            formControlName="password"
+            required
+          />
+        </div>
+        <div class="input">
+          <label for="text">პირადი ნომერი</label>
+          <input
+            type="text"
+            id="identity"
+            name="identity"
+            formControlName="identity"
+            required
+          />
+        </div>
+
+        <div class="input">
+          <label for="cv">CV File</label>
+          <input type="file" id="cv" name="cv" formControlName="cv" required />
+        </div>
+
+        <div class="input">
+          <label for="photo">ფოტოსურათი</label>
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            formControlName="photo"
+            (change)="onFileChanged($event)"
+            required
+          />
+        </div>
+        <div class="categories">
+          <label for="categories">კატეგორია</label>
+          <select
+            id="categories"
+            name="categories"
+            formControlName="categories"
+          >
+            <option value="category1">Category 1</option>
+            <option value="category2">Category 2</option>
+            <option value="category3">Category 3</option>
+          </select>
+        </div>
+
+        <div class="categories">
+          <label for="categories">როლი</label>
+          <select
+            id="categories"
+            name="categories"
+            formControlName="categories"
+          >
+            <option value="role1">Patient</option>
+            <option value="role2">Doctor</option>
+          </select>
+        </div>
+
+        <button type="submit">რეგისტრაცია</button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngFor="let user of users">
+    <h4>{{ user.firstName }}</h4>
+    <p>{{ user.lastName }}</p>
+    <div *ngIf="user.photo">
+      <img src="{{ url }}" width="100px" />
+    </div>
+  </div>
+</div>
